@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+
+
+
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Wk/1BI8Rm5NZqHbfPeP8qVaaE/M+J+muUnvFuXi6ZRJ1dSfMdgwAT3A9z1WzLWK4q4lvHbgUVF9Y4ciH3zyFydA==" crossorigin="anonymous" />
+<style>
+	/* Style for the red dot */
+.user-list-item {
+  position: relative;
+}
+
+.user-list-item::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 10px; /* Adjust the distance from the right edge */
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: block;
+}
+
+	</style>
+	</head>
+	<body>
+
+
+
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-xs-2">
+					<div id="fh5co-logo"><a>Academic Aisle</a></div>
+				</div>
+				<div class="col-md-6 col-xs-6 text-center menu-1">
+					<ul>
+						{% if user.is_authenticated %}
+						<li><span class="user-list-item"></span><a>{{ user.username }}</a></li>
+									<li><a href="{% url 'credentials:logout' %}">Logout</a></li>
+									<li><a href="{% url 'credentials:order' %}">Order Here</a></li>
+							{% else %}
+						<li><a href="{% url 'credentials:login' %}">Login</a></li>
+						<li><a href="{% url 'credentials:register' %}">Register</a></li>
+						{% endif %}
+
+
+						<li class="has-dropdown">
+							<a>Department</a>
+							<ul class="dropdown">
+								<li><a href="{% url 'shop:ComputerScience' %}">Computer Science</a></li>
+								<li><a href="{% url 'shop:BioMaths' %}">Bio Maths</a></li>
+								<li><a href="{% url 'shop:Commerce' %}">Commerce</a></li>
+								<li><a href="{% url 'shop:Humanities' %}">Humanities</a></li>
+								<li><a href="{% url 'shop:PhysicalEducation' %}">Physical Education</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</nav>
+
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+			<li style="background-image: url('{% static 'images/inbg.jpg' %}');">
+
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<div class="desc">
+
+		   						<h2>Academic Aisle</h2>
+		   						<p>Welcome to Academic Aisle, where learning meets style. Explore a curated selection of educational essentials, from science to literature, designed to enhance the student experience. Discover quality products that inspire knowledge and creativity. Elevate your educational journey with our thoughtfully chosen school supplies. Shop smart, learn brilliantly!</p>
+		   					</div>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+
+
+
+		  	</ul>
+	  	</div>
+	</aside>
+
+
+
+	<div id="fh5co-product">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<span>Cool Stuff</span>
+					<h2>Products.</h2>
+					<p>Uncover a world of academic excellence with our carefully curated product selection. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/note.jpg' %}');">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Notebooks</a></h3>
+							<span class="price">Rs.350</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/pen.jpg' %}');">
+							<span class="sale">Sale</span>
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Pen</a></h3>
+							<span class="price">Rs.100</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/pencil.jpg' %}');">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Pencil</a></h3>
+							<span class="price">Rs.80</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/cal1.jpg' %}');">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Scientific Calculator</a></h3>
+							<span class="price">Rs.1800</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/pe.jpg' %}');">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Physical Education Kit</a></h3>
+							<span class="price">Rs.1000</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url('{% static 'images/hand.jpg' %}');">
+							<div class="inner">
+								<p>
+
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Hand Sanitizer</a></h3>
+							<span class="price">Rs.160</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+		<div class="container">
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-eye"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Quality</span>
+
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-shopping-cart"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Satisfaction</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-shop"></i>
+								</span>
+								<span class="counter js-counter" data-from="0" data-to="700" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">All Products</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-clock"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="5605" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Hours Spent</span>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2023 Academic Aisle. All Rights Reserved.</small>
+						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">Malavika.A</a> </small>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+

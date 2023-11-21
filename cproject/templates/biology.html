@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header_image %}
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url('{% static 'images/bio.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+
+                                <h1>Bio Mathematics</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+  <h1>Bio Maths</h1>
+<p>Bio-Mathematics Department: Where Biology Meets Mathematics. Dive into the fascinating intersection of life sciences and mathematical principles. Our Bio-Mathematics department explores the intricate patterns of life, employing mathematical models to unravel the mysteries of biological systems. </p>
+<p>	Join us in cultivating a deep understanding of both the living world and the quantitative tools that reveal its secrets.</p>
+
+{% endblock %}

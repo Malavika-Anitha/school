@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header_image %}
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url('{% static 'images/cs11.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+
+                                <h1>Computer Science</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+
+{% block content %}
+    <h1>Computer Science</h1>
+    <p>Unlock the world of possibilities with our Computer Science Department at Academic Aisle. We empower students to explore the frontier of technology, coding, and problem-solving. From cutting-edge programming languages to innovative algorithms, our curriculum prepares students for the digital landscape.</p>
+    <p>Join us and embark on a journey of innovation and limitless potential in the field of Computer Science.</p>
+{% endblock %}

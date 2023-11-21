@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header_image %}
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url('{% static 'images/humanities.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+
+                                <h1>Humanities</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+  <h1>Humanities</h1>
+<p>Humanities at Academic Aisle is a rich tapestry of subjects that explore the human experience, culture, and society. Dive into the realms of literature, philosophy, history, and more. Our Humanities Department fosters critical thinking, creativity, and a deep understanding of the human condition.
+</p>
+<p>Uncover the stories that shape our world and cultivate a holistic education journey with us.</p>
+
+{% endblock %}

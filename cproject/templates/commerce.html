@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header_image %}
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url('{% static 'images/commerce.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+
+                                <h1>Commerce</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+  <h1>Commerce</h1>
+<p>Commerce Department: Unlocking the Path to Financial Proficiency. Delve into the dynamic world of commerce with our comprehensive programs. From accounting to business management, we empower students with the knowledge and skills essential for success in the global marketplace. </p>
+<p>Shape your future in commerce with us.</p>
+
+{% endblock %}
